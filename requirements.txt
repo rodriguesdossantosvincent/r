@@ -10,7 +10,7 @@ idna
 itsdangerous==0.24
 Jinja2
 jsonschema
-jupyter-dash
+jupyterlab-dash
 MarkupSafe
 nbformat
 nbserverproxy
