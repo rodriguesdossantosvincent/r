@@ -1,0 +1,5 @@
+dash-core-components==0.45.*
+dash-daq==0.1.*
+dash-html-components==0.15.*
+dash-renderer==0.21.*
+dash==0.40.*
