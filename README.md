@@ -26,3 +26,8 @@ are installed by default, so you can use either the Jupyter notebook interface o
 the RStudio interface.
 
 This repository also contains an example of a Shiny app.
+
+
+
+
+https://mybinder.org/v2/gh/rodriguesdossantosvincent/r/master
