@@ -1,14 +1,16 @@
 # coding: utf-8
 
+from ipykernel.comm import Comm
+from urllib.parse import urlparse
+import time
+
+dash_comm = Comm(target_name='dash_viewer')
+jupyterlab_url = None
+
+
 import dash
-import dash_core_components as dcc
 import dash_html_components as html
-from dash.dependencies import Input, Output
-import plotly.graph_objs as go
 
-from components import Header, make_dash_table, print_button
-
-import pandas as pd
 
 app = dash.Dash(__name__)
 
@@ -18,24 +20,26 @@ app.layout = html.Div([
 ])
 
 
-# # # # # # # # #
-# detail the way that external_css and external_js work and link to alternative method locally hosted
-# # # # # # # # #
-external_css = ["https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css",
-                "https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css",
-                "//fonts.googleapis.com/css?family=Raleway:400,300,600",
-                "https://codepen.io/bcd/pen/KQrXdb.css",
-                "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"]
-
-for css in external_css:
-    app.css.append_css({"external_url": css})
-
-external_js = ["https://code.jquery.com/jquery-3.2.1.min.js",
-               "https://codepen.io/bcd/pen/YaXojL.js"]
-
-for js in external_js:
-    app.scripts.append_script({"external_url": js})
+@dash_comm.on_msg
+def _recv(msg):
+    global jupyterlab_url
+    msg_data = msg.get('content').get('data')
+    msg_type = msg_data.get('type', None)
+    if msg_type == 'url_response':
+        jupyterlab_url = msg_data['url']
 
 
 if __name__ == '__main__':
+    dash_comm.send({
+        'type': 'url_request'
+    })
+    
+    while jupyterlab_url is None:
+        time.sleep(2)
+
+    path = urlparse(jupyterlab_url).path
+    app.config.update({
+        'requests_pathname_prefix': f'{path}proxy/8050/'})
     app.run_server(debug=True)
+
+    

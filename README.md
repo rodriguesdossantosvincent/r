@@ -34,3 +34,8 @@ https://github.com/binder-examples/bokeh
 https://mybinder.org/v2/gh/rodriguesdossantosvincent/r/master
 
 /proxy/8050/dash
+
+
+jupyter serverextension list
+
+jupyter serverextension disable --sys-prefix dashserverextension
