@@ -13,6 +13,7 @@ jsonschema==2.6.0
 MarkupSafe==1.0
 nbformat==4.4.0
 nbserverproxy
+pandas==0.24.*
 plotly==3.3.0
 traitlets==4.3.2
 Werkzeug==0.14.1
