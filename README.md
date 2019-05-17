@@ -28,7 +28,6 @@ the RStudio interface.
 This repository also contains an example of a Shiny app.
 
 
-
 https://github.com/binder-examples/bokeh
 
 https://mybinder.org/v2/gh/rodriguesdossantosvincent/r/master
