@@ -1,6 +1,4 @@
 # coding: utf-8
-import jupyterlab_dash
-
 
 import dash
 import dash_core_components as dcc
@@ -12,10 +10,13 @@ from components import Header, make_dash_table, print_button
 
 import pandas as pd
 
-viewer = jupyterlab_dash.AppViewer()
 app = dash.Dash(__name__)
 
-app.layout = html.Div('Hello World')
+# Describe the layout, or the UI, of the app
+app.layout = html.Div([
+    html.Div('page-content')
+])
+
 
 # # # # # # # # #
 # detail the way that external_css and external_js work and link to alternative method locally hosted
@@ -32,7 +33,9 @@ for css in external_css:
 external_js = ["https://code.jquery.com/jquery-3.2.1.min.js",
                "https://codepen.io/bcd/pen/YaXojL.js"]
 
+for js in external_js:
+    app.scripts.append_script({"external_url": js})
 
 
 if __name__ == '__main__':
-    viewer.show(app)
+    app.run_server(debug=True)
