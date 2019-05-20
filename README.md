@@ -14,12 +14,12 @@ Démarrage de l'environnement en pointant directement sur Dash :
 https://mybinder.org/v2/gh/rodriguesdossantosvincent/r/master?urlpath=proxy/8050
 
 
-| **Url**  | **Nom**  |
-| -------- | -------- |
-| /tree    | Notebook |
-| /rstudio | RStudio  |
-| /rshiny/bus-dashboard  | RShiny   |
-| /tree    | Notebook |
+| **Url**                          | **Nom**  |
+| -------------------------------- | -------- |
+| /tree                            | Notebook |
+| /rstudio                         | RStudio  |
+| /rshiny/bus-dashboard            | RShiny   |
+| /proxy/8050/dash-vanguard-report | Dash     |
 
 # Test d'utilisation
 
