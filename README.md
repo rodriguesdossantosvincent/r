@@ -32,5 +32,24 @@ https://github.com/binder-examples/bokeh
 
 https://mybinder.org/v2/gh/rodriguesdossantosvincent/r/master
 
-RStudio : /rstudio/
-Dash : /proxy/8050/dash
+
+RStudio : 
+https://mybinder.org/v2/gh/rodriguesdossantosvincent/r/master?urlpath=rstudio
+
+RStudio : 
+https://mybinder.org/v2/gh/rodriguesdossantosvincent/r/master?urlpath=shiny/bus-dashboard/
+
+Dash : 
+https://mybinder.org/v2/gh/rodriguesdossantosvincent/r/master?urlpath=proxy/8050
+
+
+# TODO:
+
+Installation d'un nouveau dash Dash
+Installation d'un nouveau dash RShiny
+
+
+
+jupyter serverextension list
+jupyter serverextension disable --sys-prefix dashserverextension
+jupyter serverextension enable --sys-prefix dashserverextension

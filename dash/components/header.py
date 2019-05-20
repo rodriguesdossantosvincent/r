@@ -1,6 +1,9 @@
 import dash_html_components as html
 import dash_core_components as dcc
 
+import json
+PATH = json.load(open('/tmp/url.json', 'r')).get('base_url')
+
 def Header():
     return html.Div([
         get_logo(),
@@ -17,7 +20,7 @@ def get_logo():
         ], className="ten columns padded"),
 
         html.Div([
-            dcc.Link('Full View   ', href='/dash-vanguard-report/full-view')
+            dcc.Link('Full View   ', href=f'{PATH}proxy/8050/dash-vanguard-report/full-view')
         ], className="two columns page-view no-print")
 
     ], className="row gs-header")
@@ -39,17 +42,17 @@ def get_header():
 def get_menu():
     menu = html.Div([
 
-        dcc.Link('Overview   ', href='/dash-vanguard-report/overview', className="tab first"),
+        dcc.Link('Overview   ', href=f'{PATH}proxy/8050/dash-vanguard-report/overview', className="tab first"),
 
-        dcc.Link('Price Performance   ', href='/dash-vanguard-report/price-performance', className="tab"),
+        dcc.Link('Price Performance   ', href=f'{PATH}proxy/8050/dash-vanguard-report/price-performance', className="tab"),
 
-        dcc.Link('Portfolio & Management   ', href='/dash-vanguard-report/portfolio-management', className="tab"),
+        dcc.Link('Portfolio & Management   ', href=f'{PATH}proxy/8050/dash-vanguard-report/portfolio-management', className="tab"),
 
-        dcc.Link('Fees & Minimums   ', href='/dash-vanguard-report/fees', className="tab"),
+        dcc.Link('Fees & Minimums   ', href=f'{PATH}proxy/8050/dash-vanguard-report/fees', className="tab"),
 
-        dcc.Link('Distributions   ', href='/dash-vanguard-report/distributions', className="tab"),
+        dcc.Link('Distributions   ', href=f'{PATH}proxy/8050/dash-vanguard-report/distributions', className="tab"),
 
-        dcc.Link('News & Reviews   ', href='/dash-vanguard-report/news-and-reviews', className="tab")
+        dcc.Link('News & Reviews   ', href=f'{PATH}proxy/8050/dash-vanguard-report/news-and-reviews', className="tab")
 
     ], className="row ")
     return menu
