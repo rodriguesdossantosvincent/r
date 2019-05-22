@@ -44,7 +44,6 @@ Un fichier log est créé afin de vous aider en cas d'erreur, accessible depuis 
 
 
 
-
 # Divers
 
 jupyter serverextension list
