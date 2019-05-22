@@ -1,3 +1,8 @@
+#!/bin/bash
+
+# Install JupyterLab extension
+jupyter labextension install @jupyterlab/toc
+
 # enable nbserverproxy
 jupyter serverextension enable --sys-prefix nbserverproxy
 # install the bokeh server extension so that
