@@ -49,3 +49,10 @@ Un fichier log est créé afin de vous aider en cas d'erreur, accessible depuis 
 jupyter serverextension list
 jupyter serverextension disable --sys-prefix dashserverextension
 jupyter serverextension enable --sys-prefix dashserverextension
+
+# Construction de l'environnement de base
+
+Supprimer le fichier **Dockerfile** et décommenter les lignes du fichier **install.R**
+et lancer une construction sur notre binder connecté à Google Compute Registry.
+Récupérer l'image créée que nous appellerons BASE (docker pull gcr.......)
+Retagguer l'image (docker tag gcr....... )
