@@ -2,11 +2,11 @@ FROM registry.gitlab.com/phec.net/oci/platformbase:base
 
 USER root
 
-RUN rm -r ${HOME}/*
+RUN rm -r /home/jovyan/*
 
-COPY . ${HOME}
+COPY . /home/jovyan/
 
-RUN chown -R ${NB_USER}:${NB_USER} ${HOME}
+RUN chown -R ${NB_USER}:${NB_USER} /home/jovyan/
 
 USER ${NB_USER}
 
